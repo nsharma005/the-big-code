@@ -51,9 +51,7 @@ env/
 .env
 
 # Ignore large files
-data/
 model/
 *.pkl
-*.csv
 *.png
 __pycache__/
