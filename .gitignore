@@ -1,0 +1,59 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# -------------------------
+# Virtual Environment
+# -------------------------
+venv/
+env/
+.venv/
+
+# -------------------------
+# OS Files
+# -------------------------
+.DS_Store
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# Model files (optional - remove if you want to push model)
+# -------------------------
+# model/*.pkl
+
+# -------------------------
+# Data (optional large files)
+# -------------------------
+# data/generated/
+# data/input/
+
+# -------------------------
+# Streamlit
+# -------------------------
+.streamlit/
+
+# -------------------------
+# VSCode / IDE
+# -------------------------
+.vscode/
+.idea/
+
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+
+# Ignore large files
+data/
+model/
+*.pkl
+*.csv
+*.png
+__pycache__/

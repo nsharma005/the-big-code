@@ -1,0 +1,19 @@
+FEATURE_COLUMNS = [
+    'avg_similarity',
+    'semantic_similarity',
+    'avg_time',
+    'following',
+    'account_age',
+    'avg_spam_score',
+    'url_ratio',
+    'avg_text_length',
+    'follower_ratio',
+    'duplicate_ratio',
+    'posts_commented',
+    'comments_per_post',
+    'punctuation_ratio',
+    'emoji_ratio',
+    'lexical_diversity',
+    'burstiness',
+    'time_variance'
+]
