@@ -51,6 +51,7 @@ env/
 .env
 
 # Ignore large files
+data/generated
 model/
 *.pkl
 *.png

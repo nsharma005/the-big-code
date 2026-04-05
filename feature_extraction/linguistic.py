@@ -56,6 +56,33 @@ def _clean_text(t):
 # MAIN FEATURE FUNCTION
 # -------------------------
 
+def avg_word_length(text):
+    words = text.split()
+    if len(words) == 0:
+        return 0
+    return np.mean([len(w) for w in words])
+
+
+def punctuation_ratio(text):
+    if len(text) == 0:
+        return 0
+    punct = sum(1 for c in text if c in "!?.,;:")
+    return punct / len(text)
+
+
+def emoji_ratio(text):
+    if len(text) == 0:
+        return 0
+    emojis = re.findall(r"[😂🔥❤️🤣😍😊👍💯]", text)
+    return len(emojis) / len(text)
+
+
+def lexical_diversity(text):
+    words = text.split()
+    if len(words) == 0:
+        return 0
+    return len(set(words)) / len(words)
+
 def comment_similarity_feature(df):
     df = df.copy()
 
@@ -206,5 +233,11 @@ def comment_similarity_feature(df):
     # -------------------------
     df["spam_score"] = df["spam_score"] / (df["spam_score"].max() + 1e-5)
     df["text_length"] = np.log1p(df["text_length"])
-
+    # -------------------------
+    # STYLOMETRY FEATURES
+    # -------------------------
+    df["avg_word_length"] = df["text"].apply(avg_word_length)
+    df["punctuation_ratio"] = df["text"].apply(punctuation_ratio)
+    df["emoji_ratio"] = df["text"].apply(emoji_ratio)
+    df["lexical_diversity"] = df["text"].apply(lexical_diversity)
     return df
